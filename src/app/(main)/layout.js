@@ -1,12 +1,15 @@
+import BreakingNews from "@/components/shared/BreakingNews";
 import Header from "@/components/shared/Header";
 import Navbar from "@/components/shared/Navbar";
 import React from "react";
 
-const MainLayOut = ({children}) => {
+
+const MainLayOut = ({ children }) => {
   return (
     <div>
-      <Navbar></Navbar>
       <Header></Header>
+      <BreakingNews></BreakingNews>
+      <Navbar></Navbar>
       {children}
     </div>
   );

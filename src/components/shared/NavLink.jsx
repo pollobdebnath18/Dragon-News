@@ -8,18 +8,12 @@ const NavLink = ({ href, children, className }) => {
 
   const isActive = pathName === href;
 
-  // Home should be active for "/" AND all category routes
-  const isHomeActive =
-    href === "/" &&
-    !pathName.startsWith("/about") &&
-    !pathName.startsWith("/career");
-
   return (
     <Link
       href={href}
       className={`
         ${isActive ? "text-primary border-b-2 pb-1 border-purple-500" : ""}
-        ${isHomeActive ? className : ""}
+        
       `}
     >
       {children}

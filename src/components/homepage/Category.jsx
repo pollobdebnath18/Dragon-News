@@ -12,10 +12,13 @@ const Category = ({ categories, activeId }) => {
               key={category.category_id}
               className={`text-lg  p-2 rounded-md ${activeId === category.category_id ? "bg-purple-700 text-white" : "bg-slate-200"}`}
             >
-              <Link href={`/category/${category.category_id}`} className="block">
+              <Link
+                href={`/category/${category.category_id}`}
+                className="block"
+              >
                 {" "}
                 {category.category_name}
-              </Link>
+              </Link> 
             </li>
           );
         })}

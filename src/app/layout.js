@@ -1,4 +1,4 @@
-import { Lobster_Two, Poppins } from "next/font/google";
+import { Lobster_Two, Open_Sans, Playfair_Display, Poppins } from "next/font/google";
 import "./globals.css";
 
 const poppins = Poppins({
@@ -6,8 +6,8 @@ const poppins = Poppins({
   subsets: ["latin"],
   weight: ["400", "500", "600", "700"],
 });
-export const lobstar = Lobster_Two({
-  variable: "--font-lobster_two",
+export const openSans = Open_Sans({
+  variable: "--font-open-sans",
   subsets: ["latin"],
   weight: ["400",  "700"],
 });

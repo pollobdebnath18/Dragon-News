@@ -1,9 +1,13 @@
 import Image from "next/image";
+import Link from "next/link";
 import React from "react";
-import { CiBookmark, CiShare2 } from "react-icons/ci";
+import { CiBookmark, CiShare2, CiStar } from "react-icons/ci";
+import { FaRegEyeSlash } from "react-icons/fa";
+import { FcRating } from "react-icons/fc";
 
 const NewsCart = ({ news }) => {
-  console.log(news);
+  // console.log(news);
+  
   return (
     <div className="card bg-base-100  shadow-sm">
       <div className="card-body">
@@ -40,8 +44,20 @@ const NewsCart = ({ news }) => {
           className="w-full"
         ></Image>
         <p className="line-clamp-4">{news.details}</p>
-        <div className="card-actions justify-end">
-          <button className="btn btn-primary">Buy Now</button>
+        <div className="card-actions justify-between items-center">
+          <div className="flex items-center justify-between gap-4">
+            <h2 className="flex items-center gap-1 text-lg">
+              <FcRating />
+              {news.rating.number}
+            </h2>
+            <h2 className="flex items-center gap-1 text-lg">
+              <FaRegEyeSlash className="text-black font-bold" />
+              {news.total_view}
+            </h2>
+          </div>
+          <Link href={`/news/${news._id}`}>
+            <button className="btn btn-primary">See Details</button>
+          </Link>
         </div>
       </div>
     </div>

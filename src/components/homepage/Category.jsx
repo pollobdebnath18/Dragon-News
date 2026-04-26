@@ -10,7 +10,7 @@ const Category = ({ categories, activeId }) => {
           return (
             <li
               key={category.category_id}
-              className={`text-lg  p-2 rounded-md ${activeId === category.category_id ? "bg-gray-200 text-purple-700" : "bg-slate-200"}`}
+              className={`text-lg  p-2 rounded-md ${activeId === category.category_id ? "bg-purple-700 text-white" : "bg-slate-200"}`}
             >
               <Link href={`/category/${category.category_id}`} className="block">
                 {" "}

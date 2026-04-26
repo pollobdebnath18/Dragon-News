@@ -15,14 +15,14 @@ const newsData = [
 const BreakingNews = () => {
   return (
     <div
-      className="flex justify-between items-center gap-4 py-2
+      className="flex justify-between items-center py-2
          px-3 bg-gray-400 max-w-[1200px] mx-auto"
     >
       <button className="btn bg-red-500 text-white">Latest</button>
       <Marquee className="text-white" pauseOnHover={true}>
         {newsData.map((n) => {
           return (
-            <span key={n.id} className="mx-10">
+            <span key={n.id} className="mx-6">
               {n.title}
             </span>
           );

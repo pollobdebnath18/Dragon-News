@@ -5,11 +5,11 @@ import User from "../../assets/user.png";
 import NavLink from "./NavLink";
 const Navbar = () => {
   return (
-    <div className="mt-10 mb-12 flex justify-between items-center gap-3 max-w-[1200px] mx-auto ">
+    <div className="my-8 flex justify-between items-center gap-3 max-w-[1200px] mx-auto bg-gray-100 pr-4">
       <div></div>
-      <ul className="flex justify-between items-center gap-3 text-gray-600">
+      <ul className="flex justify-between items-center gap-3 text-gray-600 ">
         <li>
-          <NavLink href={"/"}>Home</NavLink>
+          <NavLink className={'text-white bg-purple-500 p-1 rounded-lg'} href={"/"}>Home</NavLink>
         </li>
         <li>
           <NavLink href={"/about"}>About</NavLink>

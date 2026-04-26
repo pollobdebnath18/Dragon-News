@@ -1,11 +1,16 @@
-"use client";
 
+
+import AboutButton from "@/components/homepage/AboutButton";
 import React from "react";
 import { FaReact } from "react-icons/fa";
 
+export const metadata = {
+  title: "Dragon News-Career",
+};
+
 const page = () => {
   return (
-    <div className="mt-12 bg-gray-200 flex items-center justify-center px-4">
+    <div className="mt-10 mb-5 bg-gray- flex items-center justify-center px-4">
       <div className="max-w-2xl bg-base-100 shadow-xl rounded-2xl p-8 text-center">
         {/* Icon */}
         <div className="flex justify-center mb-4 text-blue-500">
@@ -26,7 +31,7 @@ const page = () => {
         </p>
 
         {/* Button */}
-        <button className="btn btn-primary">Explore Opportunities</button>
+        <AboutButton props={'career'}></AboutButton>
       </div>
     </div>
   );

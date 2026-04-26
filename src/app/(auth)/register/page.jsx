@@ -1,10 +1,12 @@
 "use client";
 import { authClient } from "@/lib/auth-client";
 import Link from "next/link";
-import React from "react";
+import React, { useState } from "react";
 import { useForm, Watch } from "react-hook-form";
+import { FaEye, FaEyeSlash } from "react-icons/fa";
 
 const RegisterPage = () => {
+  const [showPassword, setShowPassword] = useState(false);
   const {
     register,
     handleSubmit,
@@ -81,10 +83,10 @@ const RegisterPage = () => {
               <p className="text-red-500">{errors.email.message}</p>
             )}
           </fieldset>
-          <fieldset className="fieldset">
+          <fieldset className="fieldset relative">
             <legend className="fieldset-legend">password</legend>
             <input
-              type="password"
+              type={showPassword?"text":"password"}
               name="password"
               className="input"
               placeholder="Your Password"
@@ -92,6 +94,12 @@ const RegisterPage = () => {
                 required: "Password field is reaquired",
               })}
             />
+            <span
+              className="text-lg font-bold absolute top-4 right-3 cursor-pointer"
+              onClick={() => setShowPassword(!showPassword)}
+            >
+              {showPassword ? <FaEyeSlash></FaEyeSlash> : <FaEye></FaEye>}
+            </span>
             {errors.password && (
               <p className="text-red-500">{errors.password.message}</p>
             )}

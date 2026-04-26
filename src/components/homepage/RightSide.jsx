@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 import Fb from "@/assets/fb.png";
 import Insta from "../../assets/instagram.png";
@@ -6,13 +7,30 @@ import Image from "next/image";
 import Swimming from "../../assets/swimming.png";
 import Class from "../../assets/class.png";
 import PlayGround from "../../assets/playground.png";
+import { authClient } from "@/lib/auth-client";
 
 const RightSide = () => {
+  const handleSignInWithGoogle = async () => {
+    const data = await authClient.signIn.social({
+      provider: "google",
+    });
+    console.log(data, "login with google");
+  };
+
+  const handleSignInWithGithub = async () => {
+    const data = await authClient.signIn.social({
+      provider: "github",
+    });
+  };
+
   return (
     <div className="mx-5">
       <h2 className="text-sm font-extrabold mb-2">Login With</h2>
       {/* Google */}
-      <button className="btn bg-white text-black border-[#e5e5e5] w-full">
+      <button
+        className="btn bg-white text-black border-[#e5e5e5] w-full"
+        onClick={handleSignInWithGoogle}
+      >
         <svg
           aria-label="Google logo"
           width="16"
@@ -43,7 +61,10 @@ const RightSide = () => {
         Login with Google
       </button>
       {/* GitHub */}
-      <button className="btn bg-black text-white border-black w-full mt-3">
+      <button
+        className="btn bg-black text-white border-black w-full mt-3"
+        onClick={handleSignInWithGithub}
+      >
         <svg
           aria-label="GitHub logo"
           width="16"
